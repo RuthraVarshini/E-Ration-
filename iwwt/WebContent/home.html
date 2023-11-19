@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Name</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Include your CSS file here -->
+</head>
+
+<body>
+<style>
+/* Reset some default styles */
+body, h1, h2, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    background-color:Dodgerblue;
+    color: #fff;
+    padding: 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav li {
+    display: inline;
+    margin: 0 10px;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Main Content Styles */
+main {
+    text-align: center;
+    margin: 20px;
+}
+.login-buttons {
+    display: flex;
+}
+.button {
+    display: inline-block;
+    padding:10px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-left:5;
+}
+.button1 {
+    display: inline-block;
+    padding:10px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+
+.button:hover {
+    background-color: #555;
+}
+
+/* About Section Styles */
+.about {
+    background-color: #f5f5f5;
+    padding: 40px;
+}
+
+.about h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+.latest-news {
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+.latest-news h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.blog-post {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s ease;
+}
+
+.blog-post:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post-image {
+    max-width: 100%;
+    height:200px;
+    width:350px;
+}
+
+.blog-post h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.blog-post h3 a {
+    color: #333;
+    text-decoration: none;
+}
+
+.blog-post h3 a:hover {
+    text-decoration: underline;
+}
+
+.blog-post-date {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.blog-post-summary {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+</style>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="product.jsp">Products</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </nav>
+          <div class="login-buttons">
+            <a href="loginpage.html" class="button1">Login</a>
+            <a href="signup.html" class="button">Signup</a>
+        </div>
+    </header>
+
+    <main>
+    <section class="latest-news">
+    <h1><marquee id="ration-marquee" behavior="scroll" direction="left" scrollamount="3">
+    Welcome to E-Ration! Register today for get details about ration shops
+</marquee></h1>
+
+    <div class="blog-post">
+        <img src="https://images.newindianexpress.com/uploads/user/imagelibrary/2023/7/11/w900X450/M_K_Stalin.jpg?dpr=1.0&q=70&w=640" alt="Blog Post 1" class="blog-post-image">
+        <h3><a href="#">Make more veggies available at ration shops: Tamil Nadu CM</a></h3>
+        <p class="blog-post-date">Published on August 15, 2023</p>
+        <p class="blog-post-summary">Chief Minister MK Stalin on Monday instructed officials to take steps to make available certain vegetables and grocery items (prices of which have gone up) in ration shops as well as in all cooperative shops at less than market price. If needed, these items could be procured through the Tamil Nadu
+</p>
+    </div>
+    <div class="blog-post">
+        <img src="data:image/jpeg;base64,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" alt="Blog Post 2" class="blog-post-image">
+        <h3><a href="#">Tamil Nadu Rs 1000 Scheme Application Form, Eligibility & Payment Status Check Here:</a></h3>
+        <p class="blog-post-date">Published on August 10, 2023</p>
+        <p class="blog-post-summary">According to the latest information, the State Government of Tamil Nadu introduced the 1000 Rs Scheme on 20 March 2023 in Tamilnadu to provide financial support to the residents. The online registration of the Tamilnadu Rs. 1000 Monthly Scheme began on 15th September 2023</p>
+    </div>
+
+</section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 E-Ration Official. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

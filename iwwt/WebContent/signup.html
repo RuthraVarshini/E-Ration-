@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <form class="signup-form" action="signUpServlet" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+            <h2>Sign Up</h2>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+           
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="aadhar">Aadhar Number:</label>
+                <input type="text" id="aadhar" name="aadhar" required>
+            </div>
+
+            <div class="form-group">
+                <label for="ration">Ration Number:</label>
+                <input type="text" id="ration" name="ration" required>
+            </div>
+
+            <div class="form-group">
+                <label>Gender:</label>
+                <div class="radio-group">
+                    <input type="radio" id="male" name="gender" value="Male" required>
+                    <label for="male">Male</label>
+                </div>
+
+                <div class="radio-group">
+                    <input type="radio" id="female" name="gender" value="Female">
+                    <label for="female">Female</label>
+                </div>
+
+                <div class="radio-group">
+                    <input type="radio" id="other" name="gender" value="Other">
+                    <label for="other">Other</label>
+                </div>
+
+            </div>
+            <div class="form-group">
+                <label for="district">District:</label>
+                <select id="district" name="district" required>
+                    <option value="" disabled selected>Select District</option>
+                    <option value="district1">Ariyalur</option>
+                    <option value="district2">Chengalpattu</option>
+                    <option value="district3">Chennai</option>
+                    <option value="district3">Coimbatore</option>
+                    <option value="district3">Cuddalore</option>
+                    <option value="district3">Dharmapuri</option>
+                    <option value="district3">Dindigul</option>
+                    <option value="district3">Erode</option>
+                    <option value="district3">Kallakurichi</option>
+                    <option value="district3">Kanchipuram </option>
+                    <option value="district3">Kanyakumari</option>
+                    <option value="district3">Karur</option>
+                    <option value="district3">Krishnagiri</option>
+                    <option value="district3">Nagapattinam</option>
+                    <option value="district3">Namakkal</option>
+                    <option value="district3">Nilgiris</option>
+                    <option value="district1">Perambalur</option>
+                    <option value="district2">Pudukkottai</option>
+                    <option value="district3">Ramanathapuram </option>
+                    <option value="district3">Ranipet</option>
+                    <option value="district3">Salem</option>
+                    <option value="district3">Sivaganga</option>
+                    <option value="district3">Tenkasi</option>
+                    <option value="district3">Thanjavur</option>
+                    <option value="district3">Theni</option>
+                    <option value="district3">Thoothukudi </option>
+                    <option value="district3">Trichy</option>
+                    <option value="district3">Tirunelveli</option>
+                    <option value="district3">Tirupathur</option>
+                    <option value="district3">Tiruppur</option>
+                    <option value="district3">Tiruvallur</option>
+                    <option value="district3">Tiruvannamalai</option>
+                    <option value="district3">Tiruvarur
+                    </option>
+                    <option value="district3">Vellore</option>
+                    <option value="district3">Viluppuram</option>
+                    <option value="district3">Virudhunagar</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="aadhar-photo">Upload Aadhar Photo:</label>
+                <input type="file" id="aadhar-photo" name="aadhar-photo" accept="image/*" required>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+        <script>
+              function showSuccessMessage() {
+            document.getElementById("successMessage").style.display = "block";
+        }
+        </script>
+    </div>
+</body>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.signup-form {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+}
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    font-weight: bold;
+}
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.form-group .radio-group {
+    display: inline-block;
+    margin-right: 20px;
+}
+.form-group .radio-group label {
+    margin-left: 5px;
+}
+.form-group input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.form-group input[type="submit"]:hover {
+    background-color: #555;
+}
+</style>
+
+<script>function validateForm() {
+    var name = document.getElementById('name').value;
+    var phone = document.getElementById('phone').value;
+    var aadhar = document.getElementById('aadhar').value;
+    var ration = document.getElementById('ration').value;
+    var district = document.getElementById('district').value;
+    if (name.trim() === '') {
+        alert('Please enter your name.');
+        return false;
+    }
+    var namePattern = /^[a-zA-Z]+$/;
+            if (!namePattern.test(name)) {
+                alert('Please enter a valid name with alphabets only.');
+                return false;
+            }
+    var phoneNumber = /^\d{10}$/;
+    if (!phoneNumber.test(phone)) {
+        alert('Please enter a valid 10-digit phone number.');
+        return false;
+    }
+    var aadharNumber = /^\d{16}$/;
+    if (!aadharNumber.test(aadhar)) {
+        alert('Please enter a valid 16-digit Aadhar number.');
+        return false;
+    }
+    var rationNumber = /^\d{5}$/;
+    if (!rationNumber.test(ration)) {
+        alert('Please enter a valid 5-digit Ration number.');
+        return false;
+    }
+    if (district === '') {
+        alert('Please select a district.');
+        return false;
+    }
+    const fileInput = document.getElementById('aadhar-photo');
+    const errorDisplay = document.getElementById('errorDisplay');
+    const allowedFileTypes = ['image/jpeg', 'image/png', 'image/gif'];
+    if (!fileInput.files || fileInput.files.length === 0) {
+        errorDisplay.textContent = "Please select a picture to upload.";
+        return false;
+    }
+
+    const file = fileInput.files[0];
+    if (!allowedFileTypes.includes(file.type)) {
+        errorDisplay.textContent = "Invalid file type. Only JPEG, PNG, and GIF images are allowed.";
+        return false;
+    }
+    const maxSizeInBytes = 5 * 1024 * 1024; // 5MB
+    if (file.size > maxSizeInBytes) {
+        errorDisplay.textContent = "File size exceeds the maximum allowed limit (5MB).";
+        return false;
+    }
+    return true;
+}
+</script>
+</html>
+
